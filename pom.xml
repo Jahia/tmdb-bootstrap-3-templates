@@ -50,14 +50,13 @@
   <parent>
     <groupId>org.jahia.modules</groupId>
     <artifactId>jahia-modules</artifactId>
-    <version>7.1.1.0</version>
+    <version>7.0.0.0</version>
   </parent>
-  <groupId>org.jahia.modules</groupId>
   <artifactId>tmdb-bootstrap-3-templates</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>TMDB Bootstrap 3 Templates</name>
-  <description>This is the custom module (TMDB Bootstrap 3 Templates) for running on a Digital Experience Manager server.</description>
+  <description>This is the custom module (TMDB Bootstrap 3 Templates) for running on a Digital Factory server.</description>
   <scm>
     <connection>scm:git:git@github.com:Jahia/tmdb-bootstrap-3-templates.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/tmdb-bootstrap-3-templates.git</developerConnection>
