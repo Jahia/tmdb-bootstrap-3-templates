@@ -86,7 +86,9 @@
         <artifactId>maven-bundle-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
-          <instructions />
+          <instructions>
+            <Jahia-Depends>default,bootstrap,jahia-bootstrap-v3-components,tmdb-provider</Jahia-Depends>
+          </instructions>
         </configuration>
       </plugin>
     </plugins>
