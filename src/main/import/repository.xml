@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <tmdb-bootstrap-3-templates j:dependencies="bootstrap default jahia-bootstrap-v3-components tmdb-provider"
+        <tmdb-bootstrap-3-templates j:dependencies="bootstrap3-components bootstrap3-core default tmdb-provider"
                                   j:modulePriority="0"
                                   j:moduleType="module"
                                   j:title="TMDB Bootstrap 3 Templates"
@@ -10,10 +10,7 @@
                 <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder"/>
                 <contents jcr:primaryType="jnt:contentFolder"/>
-                <templates bootstrapVersion="less3"
-                    j:rootTemplatePath="/base"
-                    jcr:mixinTypes="jmix:bootstrapVersion"
-                    jcr:primaryType="jnt:templatesFolder">
+                <templates j:rootTemplatePath="/base" jcr:primaryType="jnt:templatesFolder">
                     <files jcr:primaryType="jnt:folder"/>
                     <contents jcr:primaryType="jnt:contentFolder"/>
                     <movie-template j:applyOn="jnt:movie"
@@ -26,22 +23,21 @@
                                  jcr:primaryType="jnt:translation"
                                  jcr:title="movie-template"/>
                         <pagecontent jcr:primaryType="jnt:contentList">
-                            <bootstrap-3-row jcr:primaryType="jnt:bootstrap3Row">
-                                <bootstrap-3-column jcr:primaryType="jnt:bootstrap3Column" offset="0" span="4">
-                                    <bootstrap-3-column jcr:primaryType="jnt:contentList">
-                                        <main-resource-display j:mainResourceView="moviefacts"
-                                                  jcr:primaryType="jnt:mainResourceDisplay"/>
-                                </bootstrap-3-column>
-                                </bootstrap-3-column>
-                                <bootstrap-3-column-1 jcr:primaryType="jnt:bootstrap3Column" offset="0" span="8">
-                                    <bootstrap-3-column-1 jcr:primaryType="jnt:contentList">
-                                        <main-resource-display j:mainResourceView="maindetails"
-                                                  jcr:primaryType="jnt:mainResourceDisplay"/>
-                                        <commentable jcr:primaryType="jnt:addComment"/>
-                                        <display-comments jcr:primaryType="jnt:commentsList"/>
-                                </bootstrap-3-column-1>
-                                </bootstrap-3-column-1>
-                            </bootstrap-3-row>
+                            <section--container--row--grid columnsType="predefinedColumns"
+                                                 grid="4_8"
+                                                 jcr:mixinTypes="bootstrap3mix:createRow bootstrap3mix:predefinedColumns"
+                                                 jcr:primaryType="bootstrap3nt:columns">
+                                <section--container--row--grid-side jcr:primaryType="jnt:contentList">
+                                    <main-resource-display j:mainResourceView="moviefacts"
+                                               jcr:primaryType="jnt:mainResourceDisplay"/>
+                                </section--container--row--grid-side>
+                                <section--container--row--grid-main jcr:primaryType="jnt:contentList">
+                                    <main-resource-display j:mainResourceView="maindetails"
+                                               jcr:primaryType="jnt:mainResourceDisplay"/>
+                                    <commentable jcr:primaryType="jnt:addComment"/>
+                                    <display-comments jcr:primaryType="jnt:commentsList"/>
+                                </section--container--row--grid-main>
+                            </section--container--row--grid>
                         </pagecontent>
                     </movie-template>
                     <movieslist-template j:applyOn="jnt:moviesList"
@@ -54,26 +50,17 @@
                                  jcr:primaryType="jnt:translation"
                                  jcr:title="movieslist-template"/>
                         <pagecontent jcr:primaryType="jnt:contentList">
-                            <bootstrap-3-row jcr:primaryType="jnt:bootstrap3Row">
-                                <bootstrap-3-column jcr:primaryType="jnt:bootstrap3Column" offset="0" span="12">
-                                    <bootstrap-3-column jcr:primaryType="jnt:contentList">
-                                        <bootstrap-3-pagination displayNbOfItemsPerPage="true"
-                                                   displayNbOfItemsPerPageValues="5,10,25,50,100"
-                                                   displayPager="true"
-                                                   jcr:mixinTypes="jmix:simplePager"
-                                                   jcr:primaryType="jnt:bootstrap3Pager"
-                                                   nbOfPages="10"
-                                                   pageSize="10"
-                                                   paginationAlignment=""
-                                                   paginationSize=""
-                                                   useArrowNextPrevious="true"/>
+                            <section--container--row--grid columnsType="predefinedColumns"
+                                                 grid="12"
+                                                 jcr:mixinTypes="bootstrap3mix:createRow bootstrap3mix:predefinedColumns"
+                                                 jcr:primaryType="bootstrap3nt:columns">
+                                <section--container--row--grid-main jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="maindetails"
                                                   jcr:primaryType="jnt:mainResourceDisplay"/>
                                         <commentable jcr:primaryType="jnt:addComment"/>
                                         <display-comments jcr:primaryType="jnt:commentsList"/>
-                                </bootstrap-3-column>
-                                </bootstrap-3-column>
-                            </bootstrap-3-row>
+                                </section--container--row--grid-main>
+                            </section--container--row--grid>
                         </pagecontent>
                     </movieslist-template>
                     <person-template j:applyOn="jnt:moviePerson"
@@ -86,18 +73,17 @@
                                  jcr:primaryType="jnt:translation"
                                  jcr:title="person-template"/>
                         <pagecontent jcr:primaryType="jnt:contentList">
-                            <bootstrap-3-row jcr:primaryType="jnt:bootstrap3Row">
-                                <bootstrap-3-column jcr:primaryType="jnt:bootstrap3Column" offset="0" span="4">
-                                    <bootstrap-3-column jcr:primaryType="jnt:contentList">
-                                        <main-resource-display j:mainResourceView="picture" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                </bootstrap-3-column>
-                                </bootstrap-3-column>
-                                <bootstrap-3-column-1 jcr:primaryType="jnt:bootstrap3Column" offset="0" span="8">
-                                    <bootstrap-3-column-1 jcr:primaryType="jnt:contentList">
-                                        <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                </bootstrap-3-column-1>
-                                </bootstrap-3-column-1>
-                            </bootstrap-3-row>
+                            <section--container--row--grid columnsType="predefinedColumns"
+                                                 grid="4_8"
+                                                 jcr:mixinTypes="bootstrap3mix:createRow bootstrap3mix:predefinedColumns"
+                                                 jcr:primaryType="bootstrap3nt:columns">
+                                <section--container--row--grid-side jcr:primaryType="jnt:contentList">
+                                    <main-resource-display j:mainResourceView="picture" jcr:primaryType="jnt:mainResourceDisplay"/>
+                                </section--container--row--grid-side>
+                                <section--container--row--grid-main jcr:primaryType="jnt:contentList">
+                                    <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
+                                </section--container--row--grid-main>
+                            </section--container--row--grid>
                         </pagecontent>
                     </person-template>
                 </templates>

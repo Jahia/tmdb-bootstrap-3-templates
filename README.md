@@ -6,8 +6,8 @@ You will need this module if you are using the TMDB on your site and your site i
 
 ### MINIMAL REQUIREMENTS
 * Digital Factory 7.0.0.0
-* Module Bootstrap 2.1.0
-* Module Jahia Bootstrap V3 Components
+* Module Bootstrap 3 Core
+* Module Bootstrap 3 Components
 * Module TMDB Provider
 
 ### INSTALLATION
